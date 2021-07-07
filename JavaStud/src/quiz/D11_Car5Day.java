@@ -34,9 +34,12 @@ public class D11_Car5Day {
 		//요일 형식 맞는 지 체크
 		boolean check = Pattern.matches("[월|화|수|목|금]?요일", day);
 		while(check) {
+			// 해당없음만 차량번호 체크
 			if(index==0) {
 				checkCar(carNumber,day);
 				break;
+				
+			//제외차량	
 			}else if(index!=0) {
 				System.out.println("제외차량입니다.");
 				System.out.println(except[index]+" 차량 끝번호 : "+carNumber);
@@ -65,6 +68,7 @@ public class D11_Car5Day {
 	public static void checkCar(int carNumber, String day) {
 		// 20180901 이후 부터로 세팅
 		event.set(2018, 8, 1);
+		
 		while(hoilDay()) {
 			
 				if(day.equals("목요일")) {
