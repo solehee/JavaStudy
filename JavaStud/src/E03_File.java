@@ -1,4 +1,5 @@
 import java.io.File;
+import java.util.Arrays;
 
 public class E03_File {
 	/*
@@ -12,7 +13,7 @@ public class E03_File {
 		File f2 = new File("note/Git 사용 설명서");
 		File f3 = new File("files");
 		File f4 = new File(f3,"game.sav");// parent, child
-		File f5 = new File("image");
+		File f5 = new File("image/flower");
 		
 		System.out.println("f1이 존재합니까? "+f1.exists());
 		System.out.println("f1이 존재합니까? "+f2.exists());
@@ -30,8 +31,16 @@ public class E03_File {
 		System.out.println(f4);
 		System.out.println(f4.getAbsolutePath());
 		
+		// list() : 해당 디렉토리 내부의 파일 이름들을 문자열 배열로 가져온다
+		// listFiles(): 해당 디렉토리 내부의 모든 파일 정보들을 File[]로 가져온다
+		System.out.println("f3 내부의 파일 이름들: "+Arrays.toString(f3.list()));
+		
 		if(!f5.exists()) {
-			f5.mkdir(); // 해당 경로로 새로운 대렉토리(폴더) 생성
+			// mkdif : 해당 경로로 새로운 디렉토리(폴더) 생성(부모 디렉토리가 없으면 생성하지 않는다)
+			//f5.mkdir();
+			
+			// mkdirs : 부모 디렉토리가 존재하지 않는 경우에도 디렉토리를 생성
+			f5.mkdirs();
 			System.out.println("새로 생성함.");
 		}else {
 			System.out.println("이미 존재해서 생성하지 않음.");
