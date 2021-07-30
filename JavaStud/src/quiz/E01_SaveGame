@@ -1,0 +1,18 @@
+/*
+간단한 컴퓨터와의 가위바위보 게임을 하나 만들고, 정적을 파일로 저장해보세요
+*/
+
+satatic int user;
+satatic int com;
+
+public static void main(String[] args){
+  try{
+  FileOutPutStream out = new FileOutputStream("game.txt",true);
+  
+  while(true){
+  com = (int)(Math.random()*3+1);
+  
+  int user = 0;
+  while(user<1||user>3){
+  System.out.println("[1.가위 2.바위 3.보]")
+  
