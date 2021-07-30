@@ -18,7 +18,7 @@ public class S02_BorderLayout extends JFrame{
 		add(new JButton("Button4"), BorderLayout.SOUTH);
 		add(new JButton("Button5"), BorderLayout.CENTER);
 		
-		setSize(500, 500);
+		this.setSize(500, 500); // this 생략가능 (= super)
 		setLocation(100, 100);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setVisible(true);

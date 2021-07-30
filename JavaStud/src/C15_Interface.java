@@ -3,7 +3,7 @@ public class C15_Interface {
 	/*
 	 	# 인터페이스 (Interface)
 	 	
-	 	- abstract class 는 상속을 여러개 받을 수 없다는 점을 보완한 것
+	 	- abstract class 는 상속을 여러개 받을 수 없다는 단점을 보완한 것
 	 	- 인터페이스 내부의 메서드는 자동으로 abstract public 이 된다
 	 	- 인터페이스 내부의 변수는 자동으로 final static 이 된다
 	*/

@@ -10,10 +10,12 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 
 public class S03_JButton extends JFrame {
+	
 	public S03_JButton() {
 		super("How to make JButton?");
 		
-		setLayout(new BorderLayout());
+		super.setTitle("Changed Title");
+		setLayout(new BorderLayout()); // 동서남북으로 붙일수 있는 레이아웃 보더레이아웃
 		
 		JButton[] btns = new JButton[5];
 		String[] directions = {"East", "West", "South", "North","Center"};

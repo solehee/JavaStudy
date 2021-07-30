@@ -8,14 +8,14 @@ import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import gui.myhandler.GenerateColorHandler;
+
 public class S07_GridLayout extends StudyFrame {
-	
-	ArrayList<JButton> btns;
 	
 	public S07_GridLayout() {
 		super();
 		
-		btns = new ArrayList<>();
+		ArrayList<JButton> btns = new ArrayList<>();
 		
 		// 2개 이상의 레이아웃을 사용하고 싶다면 JPanel을 이용한다.
 		setLayout(new BorderLayout());
@@ -35,14 +35,10 @@ public class S07_GridLayout extends StudyFrame {
 
 			center_panel.add(btn);
 		}
-		generateColor();
-	}
-	
-	private void generateColor() {
-		for(JButton btn: btns) {			
-		btn.setBackground(new Color((int)(Math.random()*0xFFFFFF)));
-		}
 		
+		// 화면을 구성하는 코드와 로직을 처리하는 코드는 분리하는 것이 좋다.
+		south_button.addActionListener(new GenerateColorHandler(btns));
+		south_button.doClick(); // 버튼을 프로그램적으로 클릭한다.
 	}
 	
 	public static void main(String[] args) {
